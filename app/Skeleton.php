@@ -2,31 +2,23 @@
 
 namespace App;
 
-use Jenssegers\Mongodb\Eloquent\Model as Model;
+use Illuminate\Database\Eloquent\Model as Model;
 
 
 class Skeleton extends Model
 {
     public $table = 'skeleton';
 
-    public $fillable = ['tanggal', 'judul', 'deskripsi', 'gambar', 'slug'];
-    public $dates = ['tanggal'];
+    public $fillable = ['textfield', 'textarea', 'date', 'file'];
+    public $dates = ['date'];
     public $dateFormat = 'd F Y';
 
-    public function getDeskripsiAttribute()
+    public function getFileLocationAttribute()
     {
-        $cdn = env('CDN_URL');
-        $deskripsi = str_replace($cdn, url('uploads'), $this->attributes['deskripsi']);
-        return $deskripsi;
-    }
+        $file = $this->attributes['file'];
 
-    public function getGambarFileAttribute()
-    {
-        $cdn = env('CDN_URL') . '/';
-        $gambar = str_replace($cdn, '', $this->gambar);
-
-        if (\Storage::exists($gambar)) {
-            return url('uploads/' . $gambar);
+        if (\Storage::exists($file)) {
+            return url('uploads/' . $file);
         } else return url('/uploads/placeholder.png');
     }
 }

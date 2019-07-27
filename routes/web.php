@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('module/list');
+    return redirect('skeleton');
 });
 
-Route::resource('/skeleton', 'SkeletonController');
+Route::resource('skeleton', 'SkeletonController');

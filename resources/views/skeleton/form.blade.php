@@ -18,11 +18,11 @@
         <div class="card">
             <div class="card-body">
                 @include('templates.error')
-                <h4 class="card-title">Tambah Data Berita <a href="{{ route('berita.index') }}"
+                <h4 class="card-title">Tambah Data <a href="{{ route('skeleton.index') }}"
                                                              class="btn btn-outline-info"><i
                                 class="mdi mdi-arrow-left"></i> Kembali</a></h4>
                 <form class="forms-sample" method="POST"
-                      action="{{ !empty($result) ? route('berita.update', $result->_id) : route('berita.store') }}"
+                      action="{{ !empty($result) ? route('skeleton.update', $result->_id) : route('skeleton.store') }}"
                       enctype="multipart/form-data">
                     @csrf
 
@@ -31,32 +31,32 @@
                     @endif
 
                     <div class="form-group row">
-                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Judul Berita</label>
+                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Textfield</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="judul" placeholder="Input judul berita"
-                                   value="{{ old('judul', @$result->judul) }}"/>
+                            <input type="text" class="form-control" name="textfield" placeholder="Textfield"
+                                   value="{{ old('textfield', @$result->textfield) }}"/>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Tanggal Berita</label>
+                        <label for="textarea" class="col-sm-2 col-form-label">Textarea</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control date" name="tanggal"
-                                   placeholder="Input tanggal berita"
-                                   value="{{ old('tanggal', empty($result->tanggal) ? '' : $result->tanggal->format('d M Y')) }}"/>
+                            <textarea rows="5" name="textarea"
+                                      placeholder="Textarea">{!! old('textarea', @$result->textarea) !!}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Deskripsi</label>
+                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Date</label>
                         <div class="col-sm-10">
-                            <textarea rows="5" name="deskripsi"
-                                      placeholder="Input deskripsi">{!! old('deskripsi', @$result->deskripsi) !!}</textarea>
+                            <input type="text" class="form-control date" name="date"
+                                   placeholder="Date"
+                                   value="{{ old('date', empty($result->date) ? '' : $result->date->format('d M Y')) }}"/>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Featured Image
+                        <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Image
                             (Opsional)</label>
                         <div class="col-sm-10">
                             <img style="width: 400px; margin-bottom: 20px;" id="featured"
@@ -108,7 +108,7 @@
       $(function () {
         $('.date').bootstrapMaterialDatePicker({time: false, format: 'DD MMM YYYY'});
 
-        CKEDITOR.replace('deskripsi', {
+        CKEDITOR.replace('textarea', {
           filebrowserBrowseUrl: '{{ url('/elfinder/ckeditor') }}',
           height: 300
         });

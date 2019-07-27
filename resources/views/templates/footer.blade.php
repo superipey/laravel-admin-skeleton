@@ -1,7 +1,7 @@
     <footer class="footer">
         <div class="container-fluid clearfix">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">© 2019
-                        <a href="https://ppdb.disdikjabarprov.go.id" target="_blank">PPDB Provinsi Jawa Barat</a>.
+                        <a href="https://ppdb.disdikjabarprov.go.id" target="_blank">Laravel Admin Skeleton</a>.
                     </span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Powered by <a href="https://somearch.co.id" target="_blank">Somearch</a>
                         <i class="mdi mdi-heart text-danger"></i>

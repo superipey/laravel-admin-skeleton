@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PPDB Admin</title>
+    <title>Skeleton</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ secure_asset('') }}/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ asset('') }}/vendors/css/vendor.bundle.base.css">
@@ -27,16 +27,15 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
             <a class="navbar-brand brand-logo" href="{{ asset('') }}/index.html">
-                <img src="{{ asset('') }}/images/LogoPPDB.svg" alt="logo"
-                     style="height: 100% !important; width: 100% !important;" /> </a>
+                <img src="{{ asset('') }}/images/flags/ID.png" alt="logo" /> </a>
             <a class="navbar-brand brand-logo-mini" href="{{ asset('') }}/index.html">
-                <img src="{{ asset('') }}/images/logo-mini.svg" alt="logo" /> </a>
+                <img src="{{ asset('') }}/images/flags/ID.png" alt="logo" /> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown d-none d-xl-inline-block">
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span class="profile-text">Hello, {{ auth()->user()->username }}</span>
+                        <span class="profile-text">Hello, {{ !empty(auth()->user()) ? auth()->user()->username : "" }}</span>
                         <img class="img-xs rounded-circle" src="{{ asset('') }}/images/faces-clipart/pic-1.png" alt="Profile image">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -67,7 +66,7 @@
                                 <img src="{{ asset('') }}/images/faces/face1.jpg" alt="profile image">
                             </div>
                             <div class="text-wrapper">
-                                <p class="profile-name">{{ auth()->user()->username }}</p>
+                                <p class="profile-name">{{ !empty(auth()->user()) ? auth()->user()->username : "" }}</p>
                                 <div>
                                     <small class="designation text-muted">Administrator</small>
                                 </div>
