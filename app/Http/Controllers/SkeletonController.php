@@ -24,7 +24,7 @@ class SkeletonController extends Controller
             'textfield' => 'required',
             'textarea' => 'required',
             'date' => 'required|date_format:d M Y',
-            'file' => 'required'
+//            'file' => 'required'
         ];
         $this->validate($request, $rules);
 

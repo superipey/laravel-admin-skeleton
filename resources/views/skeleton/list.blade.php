@@ -11,10 +11,10 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th>Field 1</th>
-                        <th>Field 2</th>
-                        <th>Field 3</th>
-                        <th>Gambar</th>
+                        <th>Textfield</th>
+                        <th>Textarea</th>
+                        <th>Date</th>
+                        <th>File</th>
                         <th>Aksi</th>
                     </tr>
                     </thead>
@@ -22,9 +22,9 @@
                     @foreach (@$result ? $result : [] as $row)
                         <tr>
                             <td>{{ isset($i) ? ++$i : $i = 1  }}</td>
-                            <td>{{ $row->field1 }}</td>
-                            <td>{{ $row->field2 ? $row->field2->format('d M y') : '-' }}</td>
-                            <td>{{ $row->field3 }}</td>
+                            <td>{{ $row->textfield }}</td>
+                            <td>{{ $row->textarea }}</td>
+                            <td>{{ $row->date ? $row->date->format('d M y') : '-' }}</td>
                             <td><img src="{{ $row->gambar_file }}" alt="" /></td>
                             <td class="no-wrap">
                                 <a href="{{ route('skeleton.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="mdi mdi-pencil"></i></a>

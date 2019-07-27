@@ -18,7 +18,7 @@ class CreateSkeletonTable extends Migration
             $table->string('textfield', 100);
             $table->text('textarea');
             $table->date('date');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
