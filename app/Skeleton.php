@@ -22,9 +22,9 @@ class Skeleton extends Model
         } else return url('/uploads/placeholder.png');
     }
 
-    public function setDateAttribute($val)
-    {
-//        dd(\Carbon\Carbon::createFromFormat('d F Y', $val)->format('Y-m-d'));
-        $this->attributes['date'] = \Carbon\Carbon::createFromFormat('d F Y', $val)->format('Y-m-d');
-    }
+//    public function setDateAttribute($val)
+//    {
+////        dd(\Carbon\Carbon::createFromFormat('d F Y', $val)->format('Y-m-d'));
+//        $this->attributes['date'] = \Carbon\Carbon::createFromFormat('d F Y', $val)->format('Y-m-d');
+//    }
 }
